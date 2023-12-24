@@ -1,0 +1,15 @@
+{{ range  . }}
+	<div class="card">
+		<figure>
+			<img height="100px" alt="Capa {{ .Titulo }}" src="{{ .Capa }}"/>
+			<figcaption>{{ .Id }}</figcaption>
+		</figure>
+		<h3>{{ .Titulo }}</h3>
+		<h4>{{ .Autor }} - {{ .AnoDePublicacao }}</h4>
+
+		<div id="box-buttons">
+			<button hx-delete="/data">Deletar</button>
+			<button>Editar</button>
+		</div>
+	</div>
+{{ end }}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width>, initial-scale=1.0">
+	<title>Livros</title>
+	<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/www/style.css">
+	<link rel="stylesheet" href="/www/global.css">
+</head>
+
+<body>
+	<form action="/data" method="post">
+		<table>
+		<tr class="inp">
+			<td><label for="inp_titulo">Título</label></td>
+			<td> <input type="text" name="titulo" id="inp_titulo" placeholder="1984">
+		</tr>
+
+		<tr class="inp">
+			<td> <label for="inp_autor">Autor</label> </td>
+			<td> <input type="text" name="autor" id="inp_autor" placeholder="George Orwell"> </td>
+		</tr>
+
+		<tr class="inp">
+			<td> <label for="inp_adp">Ano de Publicação</label> </td>
+			<td> <input type="number" name="ano_de_publicacao" id="inp_adp" placeholder="1948"> </td>
+		</tr>
+
+		<tr class="inp">
+			<td> <label for="capa">Capa</label> </td>
+			<td> <input type="hidden" name="capa" id="inp_capa"> </td>
+		</tr>
+
+		<tr>
+			<td colspan="2"> <input type="submit"> </td>
+		</tr>
+		</table>
+	</form>
+
+	<main id="card-list">
+		<a
+			hx-trigger="load"
+			hx-get="/data"
+			hx-swap="outerHTML"
+			>Loading...</a>
+	</main>
+
+</body>
+
+</html>

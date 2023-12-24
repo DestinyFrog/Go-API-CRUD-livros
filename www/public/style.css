@@ -1,0 +1,95 @@
+
+body {
+	width: 100vw;
+	min-height: 100vh;
+
+	background-color: black;
+}
+
+form {
+	position: fixed;
+	top: 0;
+	left: 50vw;
+	transform: translate( -50%, 0% );
+
+	background-color: aliceblue;
+
+	display: flex;
+	justify-content: center;
+}
+
+form table tr td {
+	width: 60%;
+}
+
+form .inp {
+	width: 100%;
+}
+
+from .inp label, form .inp input {
+	width: 50vw;
+}
+
+#card-list {
+	padding: 10px;
+
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+
+	gap: 1em;
+
+}
+
+@media only screen and (max-width: 1000px) {
+	#card-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#card-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.card {
+	width: 100%;
+
+	color: aliceblue;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card figure {
+	position: relative;
+}
+
+.card figure img {
+	object-fit: cover;
+	/* height: 230px; */
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 6/9;
+}
+
+.card figure figcaption {
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+
+	background-color: rgba( 0, 0, 0, 0.6 );
+}
+
+.card #box-buttons {
+	display: flex;
+}
+
+.card #box-buttons button {
+	width: 100%;
+
+	margin: 2px;
+	border: 0;
+}
